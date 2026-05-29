@@ -1,11 +1,11 @@
 import { Component, signal } from '@angular/core';
-import { Test } from './test/test';
+import { SignalForm } from './signal-form/signal-form';
 
 @Component({
   selector: 'app-root',
-  imports: [Test],
+  imports: [SignalForm],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
 export class App {
   protected readonly title = signal('Angular21-features');
