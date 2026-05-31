@@ -1,0 +1,45 @@
+<div ngAccordionGroup [multiExpandable]="false">
+    <h3>
+        <span ngAccordionTrigger [panel]="panel1" #trigger1="ngAccordionTrigger" [expanded]="true">
+            First Paragraph...
+        </span>
+        <span
+        aria-hidden="true"
+        class="expand-icon"
+        [class.expand-icon__expanded]="trigger1.expanded()"
+      ></span>
+    </h3>
+    <div ngAccordionPanel #panel1="ngAccordionPanel">
+        <ng-template ngAccordionContent>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio sequi quia quos et modi laboriosam
+                recusandae nisi, laudantium a quae cumque, quidem omnis nam commodi molestiae possimus veritatis, earum
+                iste! Corporis, ex, architecto eius quod iure maxime libero quisquam nihil, quo porro voluptas animi
+                natus? Quisquam, laboriosam quasi sint debitis, temporibus deleniti sapiente aliquam ad officia incidunt
+                eveniet sit aliquid autem reprehenderit rem, ipsa quia minus error illum. Iure eos illum itaque omnis
+                tempore nemo modi veritatis aliquid at, quisquam, consequatur commodi quae aut rerum? Quas deserunt
+                harum error? Alias porro reiciendis perferendis eum in cupiditate temporibus nemo tempore non.
+            </p>
+        </ng-template>
+    </div>
+    <h3>
+        <span ngAccordionTrigger [panel]="panel2" #trigger2="ngAccordionTrigger">
+            First Paragraph...
+        </span>
+        <span
+        aria-hidden="true"
+        class="expand-icon"
+        [class.expand-icon__expanded]="trigger2.expanded()"
+      ></span>
+    </h3>
+    <div ngAccordionPanel #panel2="ngAccordionPanel">
+        <ng-template ngAccordionContent>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos nesciunt ipsum natus porro numquam
+                similique omnis recusandae odit ipsa ab cumque blanditiis explicabo repudiandae quia ullam voluptas
+                sequi dignissimos, temporibus eaque minima deleniti est. Aperiam repudiandae quasi velit saepe iusto
+                placeat, molestias harum recusandae sed possimus, quia tenetur, nisi autem.
+            </p>
+        </ng-template>
+    </div>
+</div>
