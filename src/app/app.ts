@@ -1,9 +1,9 @@
 import { Component, signal } from '@angular/core';
-import { Aria } from './aria/aria';
+import { Tailwind } from './tailwind/tailwind';
 
 @Component({
   selector: 'app-root',
-  imports: [Aria],
+  imports:[Tailwind],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })

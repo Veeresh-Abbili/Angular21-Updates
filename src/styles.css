@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+:root {
+  --inter-font: Arial, sans-serif;
+  --secondary-contrast: #333;
+  --tertiary-contrast: #666;
+  --quaternary-contrast: #999;
+  --senary-contrast: #ddd;
+  --vivid-pink: #ff1493;
+  --electric-violet: #8a2be2;
+
+  --pink-to-purple-horizontal-gradient:
+    linear-gradient(to right, #ff1493, #8a2be2);
+}
