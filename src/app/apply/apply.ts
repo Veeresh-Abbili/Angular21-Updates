@@ -2,20 +2,20 @@ import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { form,FormField, required ,email, maxLength, minLength} from '@angular/forms/signals';
 
+
 interface IloginData{
   email:string;
   password:string;
 }
 
-@Component({
-  selector: 'app-signal-form',
-  imports: [FormField,CommonModule],
-  templateUrl: './signal-form.html',
-  styleUrl: './signal-form.css',
-})
-export class SignalForm {
 
-loginModal = signal<IloginData>({
+@Component({
+  selector: 'app-apply',
+  imports: [FormField,CommonModule],
+  templateUrl: './apply.html',
+  styleUrl: './apply.css',
+})
+export class Apply {loginModal = signal<IloginData>({
   email:'',
   password:''
 }); 
@@ -35,30 +35,31 @@ onSubmit(event:Event){
   // console.log(this.loginForm());
 }
 
-setForm(){
-  this.loginModal.set({
-  email:'Veer@gmail.com',
-  password:'Veer123'
-});
+// setForm(){
+//   this.loginModal.set({
+//   email:'Veer@gmail.com',
+//   password:'Veer123'
+// });
+// }
+
+// resetForm(){
+//   this.loginModal.set({
+//   email:'',
+//   password:''
+// })
+// }
+
+// updateForm(){
+//   this.loginForm.email().value.set('Veera@gmail.com')
+//   this.loginForm.password().value.set('Veera1234')
+// }
+
+// updateEmailForm(newEmail:string){
+//   this.loginModal.update(current=>({
+//     ...current,
+//     email:newEmail
+//   }))
+// }
+
 }
 
-resetForm(){
-  this.loginModal.set({
-  email:'',
-  password:''
-})
-}
-
-updateForm(){
-  this.loginForm.email().value.set('Veera@gmail.com')
-  this.loginForm.password().value.set('Veera1234')
-}
-
-updateEmailForm(newEmail:string){
-  this.loginModal.update(current=>({
-    ...current,
-    email:newEmail
-  }))
-}
-
-}

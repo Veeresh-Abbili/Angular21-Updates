@@ -1,37 +1,42 @@
-<form (submit)="onSubmit($event)">
-    <div>
-        <label>
+<div class="main-container">
+    <form (submit)="onSubmit($event)"class="login-form">
+    <div class="mb-4">
+        <label class="login-label">
             Email:
             <input type="email" 
             placeholder="enter your email" 
-            [formField]="loginForm.email">
+            [formField]="loginForm.email" class="login-input">
         </label>
         @if (loginForm.email().touched() && loginForm.email().invalid()) {
-            <ul class="error-list">
+            <ul class="login-ul">
                 @for (error of loginForm.email().errors(); track error.message) {
                     <li>{{error.message}}</li>
                 }
             </ul>
         }
     </div>
-     <div>
-        <label>
+     <div class="mb-4">
+        <label class="login-label">
             Password:
             <input type="password" 
             placeholder="enter your password" 
-            [formField]="loginForm.password">
+            [formField]="loginForm.password"  class="login-input">
         </label>
         @if (loginForm.password().touched() && loginForm.password().invalid()) {
-            <ul class="error-list">
+            <ul class="login-ul">
                 @for (error of loginForm.password().errors(); track error.message) {
                     <li>{{error.message}}</li>
                 }
             </ul>
         }
     </div>
-    <button type="submit" [disabled]="loginForm().invalid()">Login</button>
-    <button type="submit" (click)="setForm()">Set</button>
+    <button type="submit" [disabled]="loginForm().invalid()"
+    class="login-btn"
+    [ngClass]="{'opacity-500 cursor-not-allowed':loginForm().invalid()}">Login</button>
+    <!-- <button type="submit" (click)="setForm()">Set</button>
     <button type="submit" (click)="updateForm()">Update</button>
     <button type="submit" (click)="updateEmailForm('Veeresh@gmail.com')">Email Update</button>
-    <button type="submit" (click)="resetForm()">Reset</button>
+    <button type="submit" (click)="resetForm()">Reset</button> -->
 </form>
+</div>
+
