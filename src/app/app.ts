@@ -1,9 +1,9 @@
 import { Component, signal } from '@angular/core';
-import { Tailwind } from './tailwind/tailwind';
+import { Apply } from './apply/apply';
 
 @Component({
   selector: 'app-root',
-  imports:[Tailwind],
+  imports:[Apply],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
