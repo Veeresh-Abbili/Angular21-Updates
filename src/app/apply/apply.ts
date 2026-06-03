@@ -15,7 +15,20 @@ interface IloginData{
   templateUrl: './apply.html',
   styleUrl: './apply.css',
 })
-export class Apply {loginModal = signal<IloginData>({
+export class Apply {
+
+  isActive = signal<boolean>(true);
+  isVisible = signal<boolean>(true);
+  headingStyles = signal({
+    color:'blue',
+    fontSize:'20px',
+    fontWeight:'bold',
+    textAlign:'center',
+    opacity:'0.5'
+  })
+
+
+  loginModal = signal<IloginData>({
   email:'',
   password:''
 }); 
