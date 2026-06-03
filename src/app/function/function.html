@@ -1,0 +1,9 @@
+<p>function works!</p>
+
+<ul>
+    @for (item of members().filter(x=>x.active); track item) {
+        <li>{{item.name}}</li>
+    }
+</ul>
+
+<button (click)="count.update(x=>x+1)">increment: {{count()}}</button>
