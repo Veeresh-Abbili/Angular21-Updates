@@ -1,42 +1,41 @@
 <div class="main-container">
-    <form (submit)="onSubmit($event)"class="login-form">
-    <div class="mb-4">
-        <label class="login-label">
-            Email:
-            <input type="email" 
-            placeholder="enter your email" 
-            [formField]="loginForm.email" class="login-input">
-        </label>
-        @if (loginForm.email().touched() && loginForm.email().invalid()) {
+    <form (submit)="onSubmit($event)" class="login-form">
+        <!-- <h2 [ngClass]="{'active-class':isActive()}">Signal Loging Form</h2> -->
+        <!-- <h2 [class.active-class]="isActive()">Signal Loging Form</h2> -->
+        <!-- <h2 [ngStyle]="{'display':isVisible()?'block':'none'}">Signal Login Form</h2> -->
+        <h2 [style]="headingStyles()">Signal Login Form</h2>
+        <div class="mb-4">
+            <label class="login-label">
+                Email:
+                <input type="email" placeholder="enter your email" [formField]="loginForm.email" class="login-input">
+            </label>
+            @if (loginForm.email().touched() && loginForm.email().invalid()) {
             <ul class="login-ul">
                 @for (error of loginForm.email().errors(); track error.message) {
-                    <li>{{error.message}}</li>
+                <li>{{error.message}}</li>
                 }
             </ul>
-        }
-    </div>
-     <div class="mb-4">
-        <label class="login-label">
-            Password:
-            <input type="password" 
-            placeholder="enter your password" 
-            [formField]="loginForm.password"  class="login-input">
-        </label>
-        @if (loginForm.password().touched() && loginForm.password().invalid()) {
+            }
+        </div>
+        <div class="mb-4">
+            <label class="login-label">
+                Password:
+                <input type="password" placeholder="enter your password" [formField]="loginForm.password"
+                    class="login-input">
+            </label>
+            @if (loginForm.password().touched() && loginForm.password().invalid()) {
             <ul class="login-ul">
                 @for (error of loginForm.password().errors(); track error.message) {
-                    <li>{{error.message}}</li>
+                <li>{{error.message}}</li>
                 }
             </ul>
-        }
-    </div>
-    <button type="submit" [disabled]="loginForm().invalid()"
-    class="login-btn"
-    [ngClass]="{'opacity-500 cursor-not-allowed':loginForm().invalid()}">Login</button>
-    <!-- <button type="submit" (click)="setForm()">Set</button>
+            }
+        </div>
+        <button type="submit" [disabled]="loginForm().invalid()" class="login-btn"
+            [ngClass]="{'opacity-500 cursor-not-allowed':loginForm().invalid()}">Login</button>
+        <!-- <button type="submit" (click)="setForm()">Set</button>
     <button type="submit" (click)="updateForm()">Update</button>
     <button type="submit" (click)="updateEmailForm('Veeresh@gmail.com')">Email Update</button>
     <button type="submit" (click)="resetForm()">Reset</button> -->
-</form>
+    </form>
 </div>
-
