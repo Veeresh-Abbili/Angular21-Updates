@@ -1,0 +1,40 @@
+@switch (status()) {
+@case ('draft')
+@case ('pending') {
+<p>document is not yet published</p>
+}
+@case ('published') {
+<p>your document is a live</p>
+}
+@default {
+<p>Unknown status</p>
+}
+}
+
+<br>
+<hr><br>
+
+<b>updates on spread operator with arrays</b>
+
+@let allFriuts = [...friuts(), ...moreFriuts()];
+
+<ul>
+    @for (item of allFriuts; track $index) {
+    <li>{{item}}</li>
+    }
+</ul>
+
+<br>
+<hr><br>
+
+<b>updates on spread operator with object</b>
+
+@let user = {...baseUser(),...infoUser()};
+<p>{{user.name}}</p>
+<p>{{user.age}}</p>
+<p>{{user.city}}</p>
+<p>{{user.country}}</p>
+
+<b>updates on spread operator function call</b>
+
+ <p>Total : {{sum(...numbers())}};</p>
